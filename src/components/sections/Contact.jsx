@@ -7,7 +7,7 @@ const inputClasses =
 
 export default function Contact() {
   return (
-    <section className="relative overflow-hidden py-28 sm:py-40" data-motion-section="contact" id="contacto">
+    <section className="relative overflow-hidden py-20 sm:py-40" data-motion-section="contact" id="contacto">
       <div className="absolute bottom-0 left-1/2 -z-10 h-[32rem] w-[42rem] -translate-x-1/2 rounded-full bg-violet-500/9 blur-[130px]" />
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-start" data-motion-group>
@@ -49,7 +49,7 @@ export default function Contact() {
                 Mensaje
               </span>
               <textarea
-                className={`${inputClasses} min-h-48 resize-none`}
+                className={`${inputClasses} min-h-36 sm:min-h-48 resize-none`}
                 name="message"
                 placeholder="Cuéntanos sobre tu proyecto"
               />

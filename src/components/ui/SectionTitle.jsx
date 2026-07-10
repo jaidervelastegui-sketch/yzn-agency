@@ -1,6 +1,6 @@
 export default function SectionTitle({ eyebrow, title, children, ...props }) {
   return (
-    <div className="mb-16 max-w-5xl md:mb-20" data-motion-group {...props}>
+    <div className="mb-12 sm:mb-16 max-w-5xl md:mb-20" data-motion-group {...props}>
       {eyebrow ? (
         <p
           className="mb-6 text-[0.68rem] font-bold uppercase tracking-[0.5em] text-violet-100/68"

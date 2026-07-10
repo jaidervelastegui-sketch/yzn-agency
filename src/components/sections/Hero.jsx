@@ -78,19 +78,19 @@ export default function Hero() {
               Agencia Creativa
             </p>
 
-            <h1 className="mt-12 text-6xl font-black leading-none tracking-[-0.1em] text-white sm:text-8xl lg:text-[8.5rem] xl:text-[10rem]" data-motion-title>
+            <h1 className="mt-8 sm:mt-12 text-[3.25rem] sm:text-8xl font-black leading-none tracking-[-0.1em] text-white lg:text-[8.5rem] xl:text-[10rem]" data-motion-title>
               YZN
             </h1>
 
-            <h2 className="mt-14 max-w-4xl text-5xl font-semibold leading-[0.96] tracking-[-0.07em] text-white sm:text-7xl lg:text-[5.5rem] xl:text-[6rem]" data-motion-title>
+            <h2 className="mt-8 sm:mt-14 max-w-4xl text-[2.5rem] sm:text-7xl font-semibold leading-[0.96] tracking-[-0.07em] text-white lg:text-[5.5rem] xl:text-[6rem]" data-motion-title>
               Creamos experiencias digitales que dejan huella.
             </h2>
 
-            <p className="mt-10 max-w-xl text-base leading-8 text-white/62 sm:text-lg" data-motion-text>
+            <p className="mt-6 sm:mt-10 max-w-xl text-base leading-7 sm:leading-8 text-white/62 sm:text-lg" data-motion-text>
               Producción audiovisual, diseño, branding y contenido para marcas que quieren destacar.
             </p>
 
-            <div className="mt-12 flex flex-col gap-4 sm:flex-row" data-motion-group>
+            <div className="mt-8 sm:mt-12 flex flex-col gap-4 sm:flex-row" data-motion-group>
               <Button className="px-8 py-4" href="#portafolio">
                 Ver proyectos
               </Button>

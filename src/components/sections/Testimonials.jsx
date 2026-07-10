@@ -2,9 +2,9 @@ import Container from "@/components/ui/Container";
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-28 sm:py-40" data-motion-section="testimonials" id="testimonios">
+    <section className="relative overflow-hidden py-20 sm:py-40" data-motion-section="testimonials" id="testimonios">
       <Container>
-        <div className="grid gap-10 border-y border-white/[0.08] py-16 lg:grid-cols-[0.34fr_1fr] lg:py-24" data-motion-group>
+        <div className="grid gap-8 sm:gap-10 border-y border-white/[0.08] py-12 sm:py-16 lg:grid-cols-[0.34fr_1fr] lg:py-24" data-motion-group>
           <div>
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.5em] text-violet-100/68" data-motion-text>
               Clientes

@@ -58,7 +58,7 @@ const accents = {
 
 export default function Portfolio() {
   return (
-    <section className="relative overflow-hidden py-28 sm:py-40" data-motion-section="portfolio" id="portafolio">
+    <section className="relative overflow-hidden py-20 sm:py-40" data-motion-section="portfolio" id="portafolio">
       <div className="absolute right-[-18rem] top-20 -z-10 h-[42rem] w-[42rem] rounded-full bg-violet-500/9 blur-[150px]" />
       <div className="absolute left-[-16rem] bottom-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-white/[0.035] blur-[130px]" />
 
@@ -70,7 +70,7 @@ export default function Portfolio() {
         <div className="space-y-12 lg:space-y-16" data-motion-group>
           {projects.map((project, index) => (
             <Card className="p-2 sm:p-3" data-motion-item={`project-${index + 1}`} key={project.title}>
-              <div className="group/case relative min-h-[42rem] overflow-hidden rounded-[2rem] lg:min-h-[46rem]">
+              <div className="group/case relative min-h-[32rem] sm:min-h-[42rem] overflow-hidden rounded-[2rem] lg:min-h-[46rem]">
                 <div className={`absolute inset-0 ${project.visual}`} data-motion-visual />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,rgba(0,0,0,0.02)_36%,rgba(0,0,0,0)_68%,rgba(0,0,0,0.02)_100%)]" />
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:84px_84px] opacity-45 [mask-image:radial-gradient(circle_at_70%_45%,black,transparent_70%)]" />
@@ -86,7 +86,7 @@ export default function Portfolio() {
                 <div className="absolute right-16 bottom-28 hidden h-px w-80 rotate-[-18deg] bg-gradient-to-r from-transparent via-white/70 to-transparent shadow-[0_0_50px_rgba(255,255,255,0.4)] md:block" />
                 <div className="absolute bottom-16 right-28 hidden h-28 w-28 rotate-45 border border-white/20 bg-black/4 backdrop-blur-md transition duration-700 group-hover/case:rotate-[52deg] lg:block" />
 
-                <div className="relative z-10 flex min-h-[42rem] flex-col justify-between p-8 sm:p-10 lg:min-h-[46rem] lg:p-14">
+                <div className="relative z-10 flex min-h-[32rem] sm:min-h-[42rem] flex-col justify-between p-6 sm:p-10 lg:min-h-[46rem] lg:p-14">
                   <div className="flex items-start justify-between gap-6">
                     <div>
                       <p className="text-[0.68rem] font-bold uppercase tracking-[0.44em] text-white/72" data-motion-text>
@@ -99,21 +99,21 @@ export default function Portfolio() {
                     </p>
                   </div>
 
-                  <div className="grid gap-12 lg:grid-cols-[0.65fr_0.35fr] lg:items-end">
+                  <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.65fr_0.35fr] lg:items-end">
                     <div>
-                      <span className="mb-6 block text-[6rem] font-black leading-none tracking-[-0.12em] text-white/[0.34] sm:text-[9rem] lg:text-[12rem]" data-motion-text>
+                      <span className="mb-4 sm:mb-6 block text-[3.5rem] sm:text-[6rem] font-black leading-none tracking-[-0.12em] text-white/[0.34] sm:text-[9rem] lg:text-[12rem]" data-motion-text>
                         0{index + 1}
                       </span>
-                      <h3 className="text-6xl font-semibold leading-[0.86] tracking-[-0.09em] text-white sm:text-8xl lg:text-[8rem] xl:text-[9.25rem]" data-motion-title>
+                      <h3 className="text-4xl sm:text-6xl font-semibold leading-[0.86] tracking-[-0.09em] text-white sm:text-8xl lg:text-[8rem] xl:text-[9.25rem]" data-motion-title>
                         {project.title}
                       </h3>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-white/22 bg-black/4 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.14)] backdrop-blur-2xl transition duration-700 group-hover/case:border-violet-100/45 group-hover/case:bg-black/8" data-motion-group>
-                      <p className="text-lg font-semibold leading-7 tracking-[-0.035em] text-white sm:text-xl" data-motion-text>
+                    <div className="rounded-[1.5rem] border border-white/22 bg-black/4 p-5 sm:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.14)] backdrop-blur-2xl transition duration-700 group-hover/case:border-violet-100/45 group-hover/case:bg-black/8" data-motion-group>
+                      <p className="text-base sm:text-lg font-semibold leading-6 sm:leading-7 tracking-[-0.035em] text-white sm:text-xl" data-motion-text>
                         {project.description}
                       </p>
-                      <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/26 pt-5 text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/78">
+                      <div className="mt-5 sm:mt-7 flex items-center justify-between gap-4 border-t border-white/26 pt-4 sm:pt-5 text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/78">
                         <span>Proyecto</span>
                         <span>YZN</span>
                       </div>
