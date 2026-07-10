@@ -15,14 +15,33 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
 
   useEffect(() => {
+    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 36);
+
+      let current = "inicio";
+      const offset = 200;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= offset) {
+            current = sectionIds[i];
+            break;
+          }
+        }
+      }
+
+      setActiveSection(current);
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -58,17 +77,22 @@ export default function Navbar() {
           className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-[0.67rem] font-bold uppercase tracking-[0.28em] text-white/52 lg:flex"
           data-motion-group
         >
-          {navItems.map((item) => (
-            <li data-motion-item key={item.href}>
-              <a
-                className="group relative block py-2.5 transition duration-300 hover:text-white"
-                href={item.href}
-              >
-                {item.label}
-                <span className="absolute -bottom-0.5 left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-100/80 to-transparent transition-all duration-300 group-hover:w-full" />
-              </a>
-            </li>
-          ))}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.replace("#", "");
+            return (
+              <li data-motion-item key={item.href}>
+                <a
+                  className={`group relative block py-2.5 transition duration-300 hover:text-white ${isActive ? "text-white" : ""}`}
+                  href={item.href}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-1/2 h-px -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-100/80 to-transparent transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : "w-0"}`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="relative z-10 hidden lg:block" data-motion-item>
