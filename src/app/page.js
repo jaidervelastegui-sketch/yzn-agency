@@ -5,6 +5,7 @@ import PageShell from "@/components/layout/PageShell";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Portfolio from "@/components/sections/Portfolio";
+import Process from "@/components/sections/Process";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <Process />
         <Portfolio />
         <Testimonials />
         <Contact />
