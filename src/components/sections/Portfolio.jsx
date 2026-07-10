@@ -1,60 +1,8 @@
+import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-
-const projects = [
-  {
-    title: "Dôm",
-    category: "Identidad de marca",
-    year: "2026",
-    description: "Un sistema visual que fusiona la precisión japonesa con la calidez brasileña. Desde el logotipo hasta la experiencia en mesa, cada detalle fue pensado para que dos culturas conversaran a través del diseño.",
-    accent: "fuchsia",
-    visual:
-      "bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.55),transparent_18%),radial-gradient(circle_at_68%_72%,rgba(217,70,239,0.38),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.12),rgba(217,70,239,0.18)_42%,rgba(0,0,0,0.12))]",
-    panel:
-      "bg-[radial-gradient(circle_at_40%_30%,rgba(255,255,255,0.3),rgba(217,70,239,0.16)_50%,transparent_80%)] shadow-[0_0_130px_rgba(217,70,239,0.35)]",
-  },
-  {
-    title: "Ritual",
-    category: "Branding sensorial",
-    year: "2026",
-    description: "Una identidad digital construida desde el silencio, el movimiento consciente y la luz suave. Definimos la interfaz, el tono de voz y el universo visual completo para una plataforma de bienestar emocional.",
-    accent: "violet",
-    visual:
-      "bg-[radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.5),transparent_22%),radial-gradient(circle_at_30%_20%,rgba(196,181,253,0.4),transparent_35%),linear-gradient(145deg,rgba(255,255,255,0.1),rgba(168,85,247,0.2)_50%,rgba(0,0,0,0.12))]",
-    panel:
-      "bg-[radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.3),rgba(168,85,247,0.16)_50%,transparent_80%)] shadow-[0_0_130px_rgba(168,85,247,0.35)]",
-  },
-  {
-    title: "Taller de Bosque",
-    category: "Contenido digital",
-    year: "2025",
-    description: "Un ecosistema de contenido modular para una marca de diseño artesanal en Guadalajara. Creamos piezas editoriales, dirección de redes y una campaña de lanzamiento centrada en el proceso, la madera y la luz natural.",
-    accent: "emerald",
-    visual:
-      "bg-[radial-gradient(circle_at_75%_15%,rgba(255,255,255,0.52),transparent_20%),radial-gradient(circle_at_20%_70%,rgba(16,185,129,0.4),transparent_30%),linear-gradient(145deg,rgba(255,255,255,0.1),rgba(16,185,129,0.2)_40%,rgba(0,0,0,0.12))]",
-    panel:
-      "bg-[radial-gradient(circle_at_60%_30%,rgba(255,255,255,0.3),rgba(16,185,129,0.16)_50%,transparent_80%)] shadow-[0_0_130px_rgba(16,185,129,0.35)]",
-  },
-  {
-    title: "Club Milán",
-    category: "Campaña premium",
-    year: "2026",
-    description: "Una campaña de alto impacto para el lanzamiento de un club privado en la Roma. Dirección creativa, piezas gráficas, invitaciones y activación digital con un lenguaje visual audaz y contemporáneo.",
-    accent: "sky",
-    visual:
-      "bg-[radial-gradient(circle_at_85%_50%,rgba(255,255,255,0.5),transparent_20%),radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.38),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.12),rgba(56,189,248,0.2)_45%,rgba(0,0,0,0.12))]",
-    panel:
-      "bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.3),rgba(56,189,248,0.16)_50%,transparent_80%)] shadow-[0_0_130px_rgba(56,189,248,0.35)]",
-  },
-];
-
-const accents = {
-  emerald: "bg-emerald-200/80 shadow-[0_0_34px_rgba(110,231,183,0.38)]",
-  fuchsia: "bg-fuchsia-200/80 shadow-[0_0_34px_rgba(245,208,254,0.38)]",
-  sky: "bg-sky-200/80 shadow-[0_0_34px_rgba(186,230,253,0.38)]",
-  violet: "bg-violet-200/80 shadow-[0_0_34px_rgba(221,214,254,0.38)]",
-};
+import { portfolioProjects as projects, portfolioAccents as accents } from "@/data/portfolio";
 
 export default function Portfolio() {
   return (
@@ -113,7 +61,14 @@ export default function Portfolio() {
                       <p className="text-base sm:text-lg font-semibold leading-6 sm:leading-7 tracking-[-0.035em] text-white sm:text-xl" data-motion-text>
                         {project.description}
                       </p>
-                      <div className="mt-5 sm:mt-7 flex items-center justify-between gap-4 border-t border-white/26 pt-4 sm:pt-5 text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/78">
+                      <Link
+                        className="group mt-4 inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.32em] text-violet-100/78 transition duration-300 hover:text-violet-100"
+                        href={`/portfolio/${project.slug}`}
+                      >
+                        <span>Ver proyecto</span>
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                      </Link>
+                      <div className="mt-4 sm:mt-5 flex items-center justify-between gap-4 border-t border-white/26 pt-4 sm:pt-5 text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/78">
                         <span>Proyecto</span>
                         <span>YZN</span>
                       </div>
