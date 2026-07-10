@@ -2,6 +2,7 @@ export const portfolioProjects = [
   {
     slug: "dom",
     title: "Dôm",
+    client: "Dôm Sushi & Cultura",
     category: "Identidad de marca",
     year: "2026",
     description:
@@ -26,6 +27,7 @@ export const portfolioProjects = [
   {
     slug: "ritual",
     title: "Ritual",
+    client: "Ritual Platform",
     category: "Branding sensorial",
     year: "2026",
     description:
@@ -50,6 +52,7 @@ export const portfolioProjects = [
   {
     slug: "taller-de-bosque",
     title: "Taller de Bosque",
+    client: "Taller de Bosque",
     category: "Contenido digital",
     year: "2025",
     description:
@@ -74,6 +77,7 @@ export const portfolioProjects = [
   {
     slug: "club-milan",
     title: "Club Milán",
+    client: "Club Milán Roma",
     category: "Campaña premium",
     year: "2026",
     description:

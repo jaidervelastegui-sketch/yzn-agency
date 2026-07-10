@@ -22,10 +22,10 @@ export default function Portfolio() {
                 <div className={`absolute inset-0 ${project.visual}`} data-motion-visual />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,rgba(0,0,0,0.02)_36%,rgba(0,0,0,0)_68%,rgba(0,0,0,0.02)_100%)]" />
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:84px_84px] opacity-45 [mask-image:radial-gradient(circle_at_70%_45%,black,transparent_70%)]" />
-                <div className="absolute inset-6 rounded-[1.5rem] border border-white/24 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]" />
-                <div className="absolute left-6 right-6 top-6 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+                <div className="absolute inset-6 rounded-[1.5rem] border border-white/24 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] transition-all duration-700 group-hover/case:border-white/36 group-hover/case:shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]" />
+                <div className="absolute left-6 right-6 top-6 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent transition-all duration-700 group-hover/case:via-white/90 group-hover/case:scale-x-105" />
 
-                <div className="absolute bottom-[10%] left-[4%] h-[38%] w-[34%] rounded-full bg-gradient-to-r from-white/[0.06] to-transparent blur-3xl" />
+                <div className="absolute bottom-[10%] left-[4%] h-[38%] w-[34%] rounded-full bg-gradient-to-r from-white/[0.06] to-transparent blur-3xl transition-all duration-700 group-hover/case:scale-110 group-hover/case:opacity-80" />
 
                 <div className={`absolute right-[4%] top-[10%] h-[64%] w-[48%] rounded-[2.5rem] ${project.panel} border border-white/15 opacity-90 transition-all duration-700 group-hover/case:scale-105 group-hover/case:opacity-100 backdrop-blur-sm`} />
 
@@ -40,7 +40,7 @@ export default function Portfolio() {
                       <p className="text-[0.68rem] font-bold uppercase tracking-[0.44em] text-white/72" data-motion-text>
                         {project.category}
                       </p>
-                      <div className={`mt-5 h-1 w-20 rounded-full ${accents[project.accent]}`} />
+                      <div className={`mt-5 h-1 w-20 rounded-full transition-all duration-700 group-hover/case:w-32 group-hover/case:opacity-100 ${accents[project.accent]}`} />
                     </div>
                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.4em] text-white/65" data-motion-text>
                       {project.year}
@@ -57,10 +57,19 @@ export default function Portfolio() {
                       </h3>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-white/22 bg-black/4 p-5 sm:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.14)] backdrop-blur-2xl transition duration-700 group-hover/case:border-violet-100/45 group-hover/case:bg-black/8" data-motion-group>
+                    <div className="rounded-[1.5rem] border border-white/22 bg-black/6 p-5 sm:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] shadow-black/30 backdrop-blur-2xl transition-all duration-700 group-hover/case:border-violet-100/45 group-hover/case:bg-black/10 group-hover/case:shadow-[0_32px_100px_rgba(0,0,0,0.3)]" data-motion-group>
                       <p className="text-base sm:text-lg font-semibold leading-6 sm:leading-7 tracking-[-0.035em] text-white sm:text-xl" data-motion-text>
                         {project.description}
                       </p>
+                      {project.services && project.services.length > 0 && (
+                        <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5" data-motion-text>
+                          {project.services.map((s) => (
+                            <span key={s} className="text-[0.55rem] font-bold uppercase tracking-[0.28em] text-white/42">
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                       <Link
                         className="group mt-4 inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.32em] text-violet-100/78 transition duration-300 hover:text-violet-100"
                         href={`/portfolio/${project.slug}`}
@@ -69,8 +78,8 @@ export default function Portfolio() {
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </Link>
                       <div className="mt-4 sm:mt-5 flex items-center justify-between gap-4 border-t border-white/26 pt-4 sm:pt-5 text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/78">
-                        <span>Proyecto</span>
-                        <span>YZN</span>
+                        <span>Cliente</span>
+                        <span>{project.client}</span>
                       </div>
                     </div>
                   </div>

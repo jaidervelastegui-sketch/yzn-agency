@@ -7,6 +7,7 @@ import Hero from "@/components/sections/Hero";
 import Portfolio from "@/components/sections/Portfolio";
 import Agency from "@/components/sections/Agency";
 import Process from "@/components/sections/Process";
+import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <Agency />
+        <Services />
         <Process />
         <Portfolio />
         <Testimonials />
